@@ -1,27 +1,35 @@
 :root {
   --main-content-width: 1370px;
-
   --main-padding-section: 50px;
-
   --color-gold: #CDC284;
+
+  --font-size-base: 30px;
+  --font-size-h1: 120px;
 }
 
 body, input {
-  font-family: Graphik;
-  font-size: 30px;
+  font-family: Graphik, sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size-base);
   line-height: 40px;
 }
-h1 {
+h1, text-super {
+  font-family: Graphik, sans-serif;
   font-weight: 900;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
 }
 
 section {
 }
+
 [data-section-title]::before {
+  content: attr(data-section-title);
   text-align: right;
   display: block;
   position: absolute;
-  content: attr(data-section-title);
   width: 1200px;
   top: calc(10vmin - 20px);
   left: -1250px;
@@ -34,18 +42,18 @@ section {
   transform: rotatez(-90deg);
 }
 .section-content {
-  width: var(--main-content-width);
+  max-width: var(--main-content-width);
   margin: 0 auto;
   padding: 10vmin var(--main-padding-section);
 }
 
 .section_header {
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 .section_header_title {
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 140px;
+  font-size: calc(var(--font-size-h1) * 1.15);
   line-height: 0.9;
 }
 .section_header_graphic {
@@ -96,13 +104,12 @@ section {
 
 /* elements */
 .nr-form {
-  padding: 1rem 0;
 }
 .nr-form_input {
-  margin: 1rem 0;
-  height: 120px;
-  line-height: 120px;
-  font-size: 120px;
+  margin: 2rem 0;
+  height: var(--font-size-h1);
+  line-height: var(--font-size-h1);
+  font-size: var(--font-size-h1);
   font-weight: 900;
   color: #EFEFEF;
 }
@@ -113,11 +120,25 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  height: 120px;
+  height: var(--font-size-h1);
   width: 100%;
   background: transparent;
   border: none;
 }
 .nr-form_input input:focus {
   outline: none;
+}
+
+@media screen and (max-width: 1370px) {
+  :root {
+    --font-size-base: 24px;
+    --font-size-h1: 100px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  :root {
+    --font-size-base: 20px;
+    --font-size-h1: 60px;
+  }
 }

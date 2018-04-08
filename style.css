@@ -3,6 +3,7 @@
   --main-padding-section: 50px;
 
   --color-gold: #CDC284;
+  --color-blue: #013AAA;
 
   --font-size-base: 30px;
   --font-size-h1: 120px;
@@ -23,6 +24,10 @@ h1 {
   font-size: var(--font-size-h1);
 }
 
+a {
+  color: var(--color-blue);
+}
+
 section {
 }
 
@@ -41,6 +46,7 @@ section {
   color: #EFEFEF;
   transform-origin: bottom right;
   transform: rotatez(-90deg);
+  text-transform: uppercase;
 }
 .section-content {
   max-width: var(--main-content-width);
@@ -163,6 +169,9 @@ section {
   line-height: 1;
   padding: 0 0.33em;
   transform: rotatez(-6deg) translatex(-50%);
+}
+[nr-over-text]:hover::after {
+  transform: rotatez(-7deg) translatex(-50%);
 }
 
 @media screen and (max-width: 1370px) {

@@ -1,6 +1,7 @@
 :root {
   --main-content-width: 1370px;
   --main-padding-section: 50px;
+
   --color-gold: #CDC284;
 
   --font-size-base: 30px;
@@ -11,7 +12,7 @@ body, input {
   font-family: Graphik, sans-serif;
   font-weight: 400;
   font-size: var(--font-size-base);
-  line-height: 40px;
+  line-height: 1.618;
 }
 h1, text-super {
   font-family: Graphik, sans-serif;
@@ -48,7 +49,7 @@ section {
 }
 
 .section_header {
-  padding-top: 3rem;
+  padding-top: var(--main-padding-section);
 }
 .section_header_title {
   font-weight: 900;
@@ -58,8 +59,18 @@ section {
 }
 .section_header_graphic {
   position: absolute;
-  top: -2.5vmin;
+  top: 0;
   right: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section_header_graphic img {
+  display: block;
+  width: 50vw;
+  max-width: 504px
 }
 
 .section_craft .section-content {
@@ -140,5 +151,6 @@ section {
   :root {
     --font-size-base: 20px;
     --font-size-h1: 60px;
+    --main-padding-section: 30px;
   }
 }

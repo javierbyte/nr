@@ -1,0 +1,123 @@
+:root {
+  --main-content-width: 1370px;
+
+  --main-padding-section: 50px;
+
+  --color-gold: #CDC284;
+}
+
+body, input {
+  font-family: Graphik;
+  font-size: 30px;
+  line-height: 40px;
+}
+h1 {
+  font-weight: 900;
+}
+
+section {
+
+}
+section::before {
+  width: 1000px;
+  text-align: right;
+  content: attr(data-section-title);
+  position: absolute;
+  top: calc(10vmin - 20px);
+  left: -850px;
+  font-size: 50px;
+  line-height: 40px;
+  font-weight: 900;
+  color: #EFEFEF;
+  transform-origin: bottom right;
+  transform: rotatez(-90deg);
+
+}
+.section-content {
+  width: var(--main-content-width);
+  margin: 0 auto;
+  padding: 10vmin var(--main-padding-section);
+}
+
+.section_header {
+  padding-top: 5rem;
+}
+.section_header_title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 140px;
+  line-height: 0.9;
+}
+.section_header_graphic {
+  position: absolute;
+  top: -2.5vmin;
+  right: 0;
+}
+
+.section_craft .section-content {
+  color: #fff;
+  padding: var(--main-padding-section);
+}
+.section_craft > .section-content {
+  background: #000;
+}
+
+
+.top_logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: var(--main-padding-section);
+  padding-left: 4px;
+}
+.top_logo_ninorico, .top_logo_nr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s transform, 0.3s opacity;
+  transform: translatey(0);
+  opacity: 1;
+}
+
+.top_logo_ninorico.-hide {
+  transform: translatey(-8px);
+  opacity: 0; 
+}
+.top_logo_nr.-hide {
+  transform: translatey(8px);
+  opacity: 0; 
+}
+
+/* utils */
+.text-gold {
+  color: var(--color-gold);
+}
+
+/* elements */
+.nr-form {
+  padding: 1rem 0;
+}
+.nr-form_input {
+  margin: 1rem 0;
+  height: 120px;
+  line-height: 120px;
+  font-size: 120px;
+  font-weight: 900;
+  color: #EFEFEF;
+}
+.nr-form_input::before {
+  content: attr(data-placeholder);
+}
+.nr-form_input input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+.nr-form_input input:focus {
+  outline: none;
+}

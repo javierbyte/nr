@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Niño Rico</title>
-</head>
-<body>
-	Niño Rico
-</body>
-</html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<title>Niño Rubo - Turbo Fancy Web Design</title>
+		<meta property="og:title" content="Niño Rubo - Turbo Fancy Web Design">
+		<meta name="description" content="DONTFORGETTOSETUPTHIS">
+		<meta property="og:description" content="DONTFORGETTOSETUPTHIS">
+		<link rel="canonical" href="DONTFORGETTOSETUPTHIS">
+		<meta property="og:url" content="DONTFORGETTOSETUPTHIS">
+		<meta property="og:image" content="DONTFORGETTOSETUPTHIS">
+		<link rel="stylesheet" type="text/css" href="cutereset.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+		<section class="section_header"><div class="section-content">
+			<h1 class="section_header_title">
+				<div>bold</div>
+				<div class="text-gold">ideas</div>
+				<div>fancy</div>
+				<div class="text-gold">execution</div>
+			</h1>
+
+			<div class="section_header_graphic">
+				<img src="assets/nino.svg">
+			</div>
+
+		</div></section><!-- /section_header -->
+
+		<section class="section_craft"><div class="section-content">
+			<div>Crafting awesome web experiences</div>
+			<div>since yesterday.</div>
+		</div></section><!-- /section_craft -->
+
+		<br>
+
+		<section class="section_work"  data-section-title="WHAT WE DO"><div class="section-content">
+
+			<h1>Turbo Fancy Web</h1>
+			<div>We are passion driven and belive there are way to many mediocre products on the web, we take pride in our craft.</div>
+
+			<br><br><br>
+
+			<h1>MVP’s</h1>
+			<div>
+				We  love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
+			</div>
+
+			<br><br><br>
+
+			<h1>Experiments</h1>
+			<div>
+				We love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
+			</div>
+		</div></section><!-- /section-work -->
+
+		<section class="section_contact" data-section-title="WE ARE CURRENTLY…"><div class="section-content">
+			<h1>Avaliable for hire.</h1>
+			<h1>Let’s talk</h1>
+
+			<form class="nr-form">
+				<div class="nr-form_input" data-placeholder="Email">
+					<input type="text">
+				</div>
+				<div class="nr-form_input" data-placeholder="Message">
+					<input type="text">
+				</div>
+			</form>
+		</div></section><!-- /section_contact -->
+
+		<div class="top_logo">
+			<div class="section-content">
+				<img class="top_logo_ninorico" src="assets/nino-rico.svg">
+				<img class="top_logo_nr -hide" src="assets/n-r.svg">
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			const topNinoRicoEl = document.querySelector(".top_logo_ninorico");
+			const topNREl = document.querySelector(".top_logo_nr");
+
+			window.addEventListener("scroll", ev => {
+				const scrollY = window.scrollY;
+
+				if (scrollY > 50) {
+					topNinoRicoEl.classList.add("-hide");
+					topNREl.classList.remove("-hide");
+				}
+				else {
+					topNinoRicoEl.classList.remove("-hide");
+					topNREl.classList.add("-hide");
+				}
+			})
+		</script>
+
+		</body>
+	</html>

@@ -26,6 +26,9 @@
   <body>
 
     <section class="section_header"><div class="section-content">
+
+      <img class="section_header_logo" src="assets/nino-rico.svg">
+
       <h1 class="section_header_title">
         <div>bold</div>
         <div class="text-gold">ideas</div>
@@ -44,89 +47,70 @@
       <div>since yesterday.</div>
     </div></section><!-- /section_craft -->
 
-    <br>
+    <div class="main-content">
 
-    <section class="section_work"><div data-section-title="What we do" class="section-content">
-
-      <h1>Turbo Fancy Web</h1>
-      <div class="text-gold">We are passion driven and belive there are way to many mediocre products on the web, we take pride in our craft.</div>
-
-      <br><br><br>
-
-      <h1>MVP’s</h1>
-      <div class="text-gold">
-        We  love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
-      </div>
-
-      <br><br><br>
-
-      <h1>Experiments</h1>
-      <div class="text-gold">
-        We love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
-      </div>
-    </div></section><!-- /section-work -->
-
-    <section class="section-us"><div data-section-title="Us" class="section-content">
-      uh oh
-    </div></section><!-- /section-us -->
-
-    <section class="section_contact"><div data-section-title="We are currently..." class="section-content">
-      <h1>Avaliable for hire.</h1>
-      <h1>Let’s talk</h1>
-
-      <form class="nr-form">
-        <div class="nr-form_input" data-placeholder="Email">
-          <input type="text">
+      <div class="top_logo">
+        <div class="section-content -no-vertical-padding">
+          <img class="top_logo_nr" src="assets/n-r.svg">
         </div>
-        <div class="nr-form_input" data-placeholder="Message">
-          <input type="text">
+      </div>
+
+      <section class="section_work"><div data-section-title="What we do" class="section-content">
+
+        <h1>Turbo Fancy Web</h1>
+        <div class="text-gold">We are passion driven and belive there are way to many mediocre products on the web, we take pride in our craft.</div>
+
+        <br><br><br>
+
+        <h1>MVP’s</h1>
+        <div class="text-gold">
+          We  love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
         </div>
 
-        <a href="#">
-          <h3>Send ></h3>
-        </a>
-      </form>
-    </div></section><!-- /section_contact -->
+        <br><br><br>
 
-    <section class="section-lamar"><div class="section-content">
+        <h1>Experiments</h1>
+        <div class="text-gold">
+          We love developing early stage products and believe on the failure culture to reach success faster, you can hire us to test your awesome ideas in a short time span.
+        </div>
+      </div></section><!-- /section-work -->
 
-      <div class="flex">
-        <img src="assets/crown.svg">
-        <div class="p-1"></div>
-        <img class="js-lamar" src="assets/lamar.svg">
-      </div>
-      <br><br>
+      <section class="section-us"><div data-section-title="Us" class="section-content">
+        uh oh
+      </div></section><!-- /section-us -->
 
-      <div class="nr-quote -hide">
-        "<span nr-over-text="Our">My</span> whole thing is about execution. The <span nr-over-text="design">songs</span> can be great, the <span nr-over-text="code">hooks</span> can be great, but if it’s not executed well, then it’s not a great <span nr-over-text="web">album</span>."
-      </div>
-    </div></section><!-- /section-lamar -->
+      <section class="section_contact"><div data-section-title="We are currently..." class="section-content">
+        <h1>Avaliable for hire.</h1>
+        <h1>Let’s talk</h1>
 
-    <div class="top_logo">
-      <div class="section-content">
-        <img class="top_logo_ninorico" src="assets/nino-rico.svg">
-        <img class="top_logo_nr -hide" src="assets/n-r.svg">
-      </div>
-    </div>
+        <form class="nr-form">
+          <div class="nr-form_input" data-placeholder="Email">
+            <input type="text">
+          </div>
+          <div class="nr-form_input" data-placeholder="Message">
+            <input type="text">
+          </div>
 
-    <script type="text/javascript">
-      const topNinoRicoEl = document.querySelector(".top_logo_ninorico");
-      const topNREl = document.querySelector(".top_logo_nr");
+          <a href="#">
+            <h3>Send ></h3>
+          </a>
+        </form>
+      </div></section><!-- /section_contact -->
 
-      window.addEventListener("scroll", ev => {
-        const scrollY = window.scrollY;
+      <section class="section-lamar"><div class="section-content">
 
-        if (scrollY > 50) {
-          topNinoRicoEl.classList.add("-hide");
-          topNREl.classList.remove("-hide");
-        }
-        else {
-          topNinoRicoEl.classList.remove("-hide");
-          topNREl.classList.add("-hide");
-        }
-      })
-    </script>
+        <div class="flex">
+          <img src="assets/crown.svg">
+          <div class="p-1"></div>
+          <img class="js-lamar" src="assets/lamar.svg">
+        </div>
+        <br><br>
 
+        <div class="nr-quote -hide">
+          "<span nr-over-text="Our">My</span> whole thing is about execution. The <span nr-over-text="design">songs</span> can be great, the <span nr-over-text="code">hooks</span> can be great, but if it’s not executed well, then it’s not a great <span nr-over-text="web">album</span>."
+        </div>
+      </div></section><!-- /section-lamar -->
+    </div><!-- /main-content -->
 
     <script type="text/javascript">
       const lamarEl = document.querySelector(".js-lamar");

@@ -49,7 +49,7 @@ section {
 
   position: absolute;
   top: 10vmin;
-  left: -2rem;
+  left: -2.5rem;
 }
 .section-content {
   max-width: var(--main-content-width);
@@ -157,9 +157,13 @@ section {
 
   transition: opacity 0.3s;
   opacity: 1;
+  height: auto;
+  overflow: visible;
 }
 .nr-quote.-hide {
   opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 [nr-over-text]::before {

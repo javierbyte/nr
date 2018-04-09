@@ -5,6 +5,8 @@
   --color-gold: #CDC284;
   --color-blue: #013AAA;
 
+  --color-light-gray: #eaeaea;
+
   --font-size-base: 30px;
   --font-size-h1: 120px;
 }
@@ -38,7 +40,7 @@ section {
   font-size: calc(1.66 * var(--font-size-base));
   line-height: calc(1.66 * var(--font-size-base));
   font-weight: 900;
-  color: #eaeaea;
+  color: var(--color-light-gray);
 
   transform: rotatez(180deg);
 
@@ -100,19 +102,18 @@ section {
   background: #000;
 }
 
-
 .top_logo {
   z-index: 100;
+  position: -webkit-sticky;
   position: sticky;
-  -webkit-position: sticky;
   width: 100vw;
   top: 0;
   left: 0;
+  padding: 1rem 0;
 }
 
 .top_logo_nr {
   display: block;
-  padding: 1rem 0;
 }
 
 /* utils */
@@ -126,6 +127,7 @@ section {
 
 /* elements */
 .nr-form {
+  padding: 2rem 0;
 }
 .nr-form_input {
   margin: 2rem 0;
@@ -154,15 +156,24 @@ section {
 .nr-quote {
   font-size: calc(var(--font-size-h1) * 0.666);
 
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translatey(0);
   opacity: 1;
   height: auto;
   overflow: visible;
+  z-index: 0;
 }
 .nr-quote.-hide {
+  transform: translatey(-5rem);
   opacity: 0;
+  z-index: -1;
   height: 10rem;
   overflow: hidden;
+}
+
+.nr-quote-easter {
+  font-size: var(--font-size-base);
+  color: var(--color-light-gray);
 }
 
 [nr-over-text]::before {
@@ -230,5 +241,9 @@ section {
     --font-size-base: 20px;
     --font-size-h1: 60px;
     --main-padding-section: 30px;
+  }
+
+  .nr-quote {
+    line-height: 1.4;
   }
 }

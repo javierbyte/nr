@@ -34,16 +34,15 @@ section {
 [data-section-title]::before {
   text-align: right;
   content: attr(data-section-title);
-  display: inline-block;
+  display: block;
   font-size: 50px;
   line-height: 50px;
   font-weight: 900;
-  color: #EFEFEF;
+  color: #eaeaea;
 
   transform: rotatez(180deg);
 
   writing-mode: vertical-rl;
-  text-orientation: unset;
 
   text-transform: uppercase;
 
@@ -218,5 +217,16 @@ section {
     --font-size-base: 20px;
     --font-size-h1: 60px;
     --main-padding-section: 30px;
+  }
+
+  [data-section-title]::before {
+    text-align: left;
+    display: block;
+    transform: none;
+    writing-mode: horizontal-tb;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-bottom: 1rem;
   }
 }

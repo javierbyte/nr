@@ -66,7 +66,7 @@ section {
 }
 .section_header_logo {
   display: block;
-  margin-left: 4px;
+  margin-left: 5px;
   margin-top: -1rem;
   margin-bottom: 3rem;
 }
@@ -75,9 +75,12 @@ section {
   text-transform: uppercase;
   font-size: calc(var(--font-size-h1) * 1.15);
   line-height: 0.9;
+  z-index: 2;
+  mix-blend-mode: multiply;
 }
 .section_header_graphic {
   position: absolute;
+  z-index: 1;
   top: 0;
   right: 0;
   height: 100%;
@@ -89,7 +92,8 @@ section {
 .section_header_graphic img {
   display: block;
   width: 50vw;
-  max-width: 504px
+  max-width: 550px;
+  top: 5rem;
 }
 .section_craft {
   margin-bottom: 5rem;

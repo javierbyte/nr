@@ -35,8 +35,8 @@ section {
   text-align: right;
   content: attr(data-section-title);
   display: block;
-  font-size: 50px;
-  line-height: 50px;
+  font-size: calc(1.66 * var(--font-size-base));
+  line-height: calc(1.66 * var(--font-size-base));
   font-weight: 900;
   color: #eaeaea;
 
@@ -48,7 +48,7 @@ section {
 
   position: absolute;
   top: 10vmin;
-  left: -2.5rem;
+  left: -3rem;
 }
 .section-content {
   max-width: var(--main-content-width);
@@ -161,7 +161,7 @@ section {
 }
 .nr-quote.-hide {
   opacity: 0;
-  height: 0;
+  height: 10rem;
   overflow: hidden;
 }
 
@@ -206,19 +206,13 @@ section {
   }
 
   :root {
-    --main-content-width: 1260px;
+    --main-content-width: 1180px;
     --font-size-base: 24px;
     --font-size-h1: 100px;
   }
 }
 
-@media screen and (max-width: 980px) {
-  :root {
-    --font-size-base: 20px;
-    --font-size-h1: 60px;
-    --main-padding-section: 30px;
-  }
-
+@media screen and (max-width: 1300px) {
   [data-section-title]::before {
     text-align: left;
     display: block;
@@ -228,5 +222,13 @@ section {
     top: 0;
     left: 0;
     padding-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  :root {
+    --font-size-base: 20px;
+    --font-size-h1: 60px;
+    --main-padding-section: 30px;
   }
 }

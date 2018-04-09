@@ -24,6 +24,9 @@ h1, text-super {
 
 h1 {
   font-size: var(--font-size-h1);
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 a {

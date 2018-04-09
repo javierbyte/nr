@@ -90,11 +90,14 @@
 
     <section class="section-lamar"><div class="section-content">
 
-      <img src="assets/crown.svg">
-      <img src="assets/lamar.svg">
+      <div class="flex">
+        <img src="assets/crown.svg">
+        <div class="p-1"></div>
+        <img class="js-lamar" src="assets/lamar.svg">
+      </div>
       <br><br>
 
-      <div class="nr-quote">
+      <div class="nr-quote -hide">
         "<span nr-over-text="Our">My</span> whole thing is about execution. The <span nr-over-text="design">songs</span> can be great, the <span nr-over-text="code">hooks</span> can be great, but if it’s not executed well, then it’s not a great <span nr-over-text="web">album</span>."
       </div>
     </div></section><!-- /section-lamar -->
@@ -121,6 +124,16 @@
           topNinoRicoEl.classList.remove("-hide");
           topNREl.classList.add("-hide");
         }
+      })
+    </script>
+
+
+    <script type="text/javascript">
+      const lamarEl = document.querySelector(".js-lamar");
+      const nrQuoteEl = document.querySelector(".nr-quote");
+
+      lamarEl.addEventListener("click", function() {
+        nrQuoteEl.classList.remove("-hide");
       })
     </script>
 

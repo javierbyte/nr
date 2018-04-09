@@ -38,7 +38,7 @@ section {
   position: absolute;
   width: 1200px;
   top: calc(10vmin - 20px);
-  left: -1250px;
+  left: -1220px;
   margin: 0 auto;
   font-size: 50px;
   line-height: 40px;
@@ -119,6 +119,10 @@ section {
   color: var(--color-gold);
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
 /* elements */
 .nr-form {
 }
@@ -148,34 +152,56 @@ section {
 
 .nr-quote {
   font-size: calc(var(--font-size-h1) * 0.666);
+
+  transition: opacity 0.3s;
+  opacity: 1;
 }
+.nr-quote.-hide {
+  opacity: 0;
+}
+
 [nr-over-text]::before {
   content: "";
   display: block;
   position: absolute;
-  top: calc(50% - 10px);
+  top: calc(50% - 5px);
   left: 0;
-  width: 100%;
   height: 10px;
   background: #000;
+
+  transition: width 0.3s 0.1s;
+  width: 100%;
 }
 [nr-over-text]::after {
   content: attr(nr-over-text);
   position: absolute;
-  top: -0.75em;
   left: 50%;
   background: var(--color-gold);
   font-size: 0.75em;
   line-height: 1;
   padding: 0 0.33em;
-  transform: rotatez(-6deg) translatex(-50%);
-}
-[nr-over-text]:hover::after {
-  transform: rotatez(-7deg) translatex(-50%);
+
+  transition: transform 0.3s 0.1s, opacity 0.1s 0.1s;
+  transform: rotatez(-6deg) translatex(-50%) translatey(-40%);
+  opacity: 1;
 }
 
-@media screen and (max-width: 1370px) {
+
+.nr-quote.-hide [nr-over-text]::before {
+  width: 0;
+}
+.nr-quote.-hide [nr-over-text]::after {
+  transform: rotatez(0) translatex(-50%) translatey(-40%) scale(1.1);
+  opacity: 0;
+}
+
+@media screen and (max-width: 1520px) {
+
+  body {
+  }
+
   :root {
+    --main-content-width: 1260px;
     --font-size-base: 24px;
     --font-size-h1: 100px;
   }

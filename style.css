@@ -95,7 +95,7 @@ section {
 .section_header_graphic img {
   display: block;
   width: 50vw;
-  max-width: 550px;
+  max-width: 560px;
   top: 5rem;
 }
 .section_craft {
@@ -107,6 +107,19 @@ section {
 }
 .section_craft > .section-content {
   background: #000;
+}
+
+.section-us_person {
+  padding-right: 10vmin;
+}
+.section-us_person_name {
+  color: var(--color-light-gray);
+}
+.section-us_person_motto {
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .top_logo {

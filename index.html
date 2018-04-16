@@ -289,8 +289,7 @@
         let done = false;
 
         for (el of workEntryElArray) {
-          // if the element is fully visible
-          if (!done && el.getBoundingClientRect().top > 100) {
+          if (!done && el.getBoundingClientRect().top > window.innerHeight / 15 + 10) {
             el.classList.remove("-off");
             done = true;
           }

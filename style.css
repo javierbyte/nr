@@ -201,8 +201,9 @@ section {
   transform: translatey(-5rem);
   opacity: 0;
   z-index: -1;
-  height: 10rem;
+  height: 0;
   overflow: hidden;
+  background: #000;
 }
 
 .nr-quote-easter {

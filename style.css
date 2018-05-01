@@ -121,7 +121,7 @@ section {
 }
 
 .section-us_person {
-  padding-right: 10vmin;
+  padding-right: 20vmin;
 }
 .section-us_person_name {
   color: var(--color-light-gray);
@@ -131,6 +131,18 @@ section {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.section-us_person_image {
+  zoom: 0.5;
+}
+.section-us_person_bio {
+  background: #000;
+  display: block;
+  color: #fff;
+  margin-top: -1rem;
+  padding: var(--font-size-base);
+
+  display: none;
 }
 
 .top_logo {

@@ -114,7 +114,13 @@
 
     <section class="section_craft"><div class="section-content">
       <div>Crafting awesome web experiences</div>
-      <div>since yesterday.</div>
+      <div>since <span data-js-nr-change="yesterday.,this morning.">
+        <span data-js-nr-change-invisible>yesterday</span>
+        <span data-js-nr-change-sub></span>
+        <span data-js-nr-change-message></span>
+        <span data-js-nr-change-message-next></span>
+      </span>
+      </div>
     </div></section><!-- /section_craft -->
 
     <div class="main-content">
@@ -201,7 +207,14 @@
         <div class="section_title_spacer" data-section="contact"></div>
 
 
-        <h1>Avaliable for hire.</h1>
+        <h1>
+          <span data-js-nr-change="Pretty busy right now.,Available for hire">
+            <span data-js-nr-change-invisible>yesterday</span>
+            <span data-js-nr-change-sub></span>
+            <span data-js-nr-change-message></span>
+            <span data-js-nr-change-message-next></span>
+          </span>
+        </h1>
         <h1>Let’s talk</h1>
 
         <form class="nr-form">
@@ -303,6 +316,37 @@
       const throttledOnScroll = throttle(onScroll, 15);
       window.addEventListener('scroll', throttledOnScroll);
       onScroll();
+    </script>
+
+    <script type="text/javascript">
+      // moving text
+
+      const textMovingElements = document.querySelectorAll("[data-js-nr-change]");
+      const movingElementIndexTrack = {};
+
+      function moveElements() {
+        textMovingElements.forEach((textMovingEl, textMovingElIdx) => {
+          const optionsStr = textMovingEl.dataset.jsNrChange.split(",");
+
+          if (movingElementIndexTrack[textMovingElIdx] !== undefined) {
+            movingElementIndexTrack[textMovingElIdx] = (movingElementIndexTrack[textMovingElIdx] + 1) % optionsStr.length
+          }
+          else {
+            movingElementIndexTrack[textMovingElIdx] = 0;
+          }
+
+          const currentIdx = movingElementIndexTrack[textMovingElIdx];
+
+          textMovingEl.querySelector("[data-js-nr-change-message]").innerHTML = optionsStr[currentIdx];
+          textMovingEl.querySelector("[data-js-nr-change-message-next]").innerHTML = optionsStr[(currentIdx + 1) % optionsStr.length];
+
+          const width = textMovingEl.querySelector("[data-js-nr-change-message]").getBoundingClientRect().width;
+          textMovingEl.style.width = width + "px";
+        });
+      }
+      moveElements();
+
+      window.setInterval(moveElements, 5 * 1000);
     </script>
 
     </body>

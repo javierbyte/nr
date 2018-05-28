@@ -52,7 +52,7 @@ section {
 
   position: -webkit-sticky;
   position: sticky;
-  top: 10vmin;
+  top: 9vmin;
   left: 0;
   margin-left: -6rem;
   text-align: right;
@@ -60,7 +60,7 @@ section {
 .section-content {
   max-width: var(--main-content-width);
   margin: 0 auto;
-  padding: 10vmin var(--main-padding-section);
+  padding: 9vmin var(--main-padding-section);
 }
 .section-content.-no-vertical-padding {
   padding-top: 0;
@@ -149,7 +149,7 @@ section {
 
 /* utils */
 .-text-gold {
-  color: var(--color-gold);
+  color: var(--color-gold);var(--color-gold);
 }
 .-text-light-gray {
   color: var(--color-light-gray);
@@ -242,6 +242,45 @@ section {
 }
 .nr-quote.-hide [nr-over-text]::after {
   transform: rotatez(0) translatex(-50%) translatey(-40%) scale(1.1);
+  opacity: 0;
+}
+
+[data-js-nr-change] {
+  display: inline-block;
+  position: relative;
+  transition: 0.3s width;
+}
+
+[data-js-nr-change-sub] {
+  display: block;
+  border-bottom: 3px solid var(--color-gold);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+}
+h1 [data-js-nr-change-sub] {
+  border-bottom: 8px solid var(--color-gold);
+  bottom: 2px;
+}
+
+[data-js-nr-change-message] {
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+}
+
+[data-js-nr-change-message-next] {
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+}
+
+[data-js-nr-change-invisible] {
   opacity: 0;
 }
 

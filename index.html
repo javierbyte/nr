@@ -377,13 +377,14 @@
 
         document.querySelector("[data-js-send-email]").addEventListener("submit", function(evt) {
           evt.preventDefault();
-          window.history.back();
 
           const mail = document.querySelector("[data-js-form-mail]").value;
           const message = document.querySelector("[data-js-form-message]").value;
 
           document.querySelector("[data-js-form-success]").classList.remove("-hide");
           document.querySelector("[data-js-send-email]").classList.add("-hide");
+
+          window.history.back();
 
           client.recordEvent('email', {
             mail,

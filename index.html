@@ -384,8 +384,6 @@
           document.querySelector("[data-js-form-success]").classList.remove("-hide");
           document.querySelector("[data-js-send-email]").classList.add("-hide");
 
-          window.history.back();
-
           client.recordEvent('email', {
             mail,
             message

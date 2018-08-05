@@ -220,6 +220,7 @@ section {
   height: 0;
   overflow: hidden;
   background: #000;
+  display: block;
 }
 
 .nr-quote-easter {

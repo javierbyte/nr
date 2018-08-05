@@ -206,7 +206,7 @@
 
       <section class="section_contact"><div class="section-content">
 
-        <div class="section_title" data-section="contact">
+        <div class="section_title hide-on-mobile" data-section="contact">
           Talk with us
         </div>
         <div class="section_title_spacer" data-section="contact"></div>
@@ -221,18 +221,18 @@
         </h1>
         <h1>Let’s talk</h1>
 
-        <form class="nr-form">
+        <div data-js-form-success class="-hide -text-gold">We will contact you shortly...</div>
+
+        <form class="nr-form" data-js-send-email validate>
           <div class="nr-form_input" data-placeholder="Email">
-            <input type="text">
+            <input type="email" name="mail" required data-js-form-mail>
           </div>
           <div class="nr-form_input" data-placeholder="Message">
-            <input type="text">
+            <input type="text" name="message" required data-js-form-message>
           </div>
-        </form>
 
-        <a href="#">
-          Send >
-        </a>
+          <input type="submit" value="Submit">
+        </form>
       </div></section><!-- /section_contact -->
 
     </div><!-- /main-content -->
@@ -353,5 +353,48 @@
       window.setInterval(moveElements, 5 * 1000);
     </script>
 
+    <script type="text/javascript">
+      !function(name,path,ctx){
+        var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+      }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.4.2.min.js',this);
+
+      KeenAsync.ready(function(){
+        // Configure a client instance
+        var client = new KeenAsync({
+          projectId: '5b667619c9e77c0001eefc3f',
+          writeKey: 'E6C53A1E722717F4702758919A2405DD4BCC0930C78D6869324A7E11C727EF1B3B23618DE3C3E6854BB434C93BF3A45FEE8A1D8D286BB758488F28007E2326DB69E18B09B0BA14CA6F5E527C706C6F529FBFFF518E9B881916FC5FAF5C9A8170'
+        });
+
+        // Record an event
+        client.recordEvent('pageviews', {
+          title: document.title
+        });
+
+        document.querySelector("[data-js-send-email]").addEventListener("submit", function(evt) {
+          evt.preventDefault();
+
+          const mail = document.querySelector("[data-js-form-mail]").value;
+          const message = document.querySelector("[data-js-form-message]").value;
+
+          document.querySelector("[data-js-form-success]").classList.remove("-hide");
+          document.querySelector("[data-js-send-email]").classList.add("-hide");
+
+          client.recordEvent('email', {
+            mail,
+            message
+          });
+        });
+
+      });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44329676-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-44329676-17');
+    </script>
     </body>
   </html>

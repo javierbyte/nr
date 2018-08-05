@@ -36,6 +36,10 @@ a {
 section {
 }
 
+.-hide {
+  display: none;
+}
+
 .section_title {
   content: attr(data-section-title);
   display: block;

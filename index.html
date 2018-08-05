@@ -221,9 +221,11 @@
         </h1>
         <h1>Let’s talk</h1>
 
+        <div data-js-form-no-js class="-text-gold">Write us at hi@niñorico.com</div>
+
         <div data-js-form-success class="-hide -text-gold">We will contact you shortly...</div>
 
-        <form class="nr-form" data-js-send-email validate>
+        <form class="nr-form -hide" data-js-send-email validate>
           <div class="nr-form_input" data-placeholder="Email">
             <input type="email" name="mail" required data-js-form-mail>
           </div>
@@ -370,8 +372,12 @@
           title: document.title
         });
 
+        document.querySelector("[data-js-form-no-js]").classList.add("-hide");
+        document.querySelector("[data-js-send-email]").classList.remove("-hide");
+
         document.querySelector("[data-js-send-email]").addEventListener("submit", function(evt) {
           evt.preventDefault();
+          window.history.back();
 
           const mail = document.querySelector("[data-js-form-mail]").value;
           const message = document.querySelector("[data-js-form-message]").value;

@@ -337,4 +337,8 @@ h1 [data-js-nr-change-sub] {
   .nr-quote {
     line-height: 1.4;
   }
+
+ .hide-on-mobile {
+    display: none;
+  }
 }

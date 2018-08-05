@@ -211,12 +211,12 @@ section {
   text-decoration: none;
   border: none;
   background: transparent;
-  font-size: 1.5em;
+  font-size: 1.333em;
   color: var(--color-blue);
   cursor: pointer;
+  text-decoration: underline;
 }
 .button-submit:hover {
-  text-decoration: underline;
   opacity: 0.9;
 }
 
